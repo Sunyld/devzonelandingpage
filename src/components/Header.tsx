@@ -49,24 +49,13 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isHero ? "gradient-bg" : "bg-white shadow-lg"
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isHero ? "gradient-bg" : "bg-white shadow-lg"} `}
     >
       <nav className="mx-auto px-6 ">
         <div className="flex justify-between items-center py-4 gap-6">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="bg-primary-600 p-2 rounded-lg">
-              <Code className="h-6 w-6 text-white" />
-            </div>
-            <span
-              className={`text-xl font-bold ${
-                isHero ? "text-white" : "text-gray-900"
-              }`}
-            >
-              DigitalCraft
-            </span>
+            <img src={`${isHero ? "public/img/logoWhite.png" : "public/img/logo.png"}`} className="h-16" alt="DevZoneSystems" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -75,22 +64,20 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`font-medium px-1 transition-colors duration-300 ${
-                  location.pathname === item.href
-                    ? "text-primary-500  border-b-2"
+                className={`font-medium px-1 transition-colors duration-300 ${location.pathname === item.href
+                    ? "text-primary-300  border-b-2 border-primary-300"
                     : isHero
-                    ? "text-white hover:text-primary-200 "
-                    : "text-gray-700  hover:text-primary-600 "
-                }`}
+                      ? "text-white hover:text-primary-200 "
+                      : "text-gray-700  hover:text-primary-600 "
+                  }`}
               >
                 {item.name}
               </Link>
             ))}
             <Link
               to="/area-cliente"
-              className={`btn-primary ${
-                isHero ? "" : "!bg-primary-600 !text-white"
-              }`}
+              className={`btn-primary ${isHero ? "" : "!bg-primary-600 !text-white"
+                }`}
             >
               Área do Cliente
             </Link>
@@ -101,9 +88,8 @@ const Header = () => {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-              className={`p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-600 transition-colors duration-200 ${
-                isHero ? "text-white" : "text-gray-700"
-              }`}
+              className={`p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-600 transition-colors duration-200 ${isHero ? "text-white" : "text-gray-700"
+                }`}
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -119,16 +105,14 @@ const Header = () => {
           <div className="fixed inset-0 z-50 flex custom:hidden">
             {/* Overlay */}
             <div
-              className={`fixed inset-0 bg-black transition-opacity duration-300 ${
-                isAnimating ? "bg-opacity-30" : "bg-opacity-0"
-              }`}
+              className={`fixed inset-0 bg-black transition-opacity duration-300 ${isAnimating ? "bg-opacity-30" : "bg-opacity-0"
+                }`}
               onClick={() => setIsMenuOpen(false)}
             />
             {/* Off-canvas menu */}
             <div
-              className={`relative ml-auto w-4/5 max-w-xs h-full bg-white shadow-lg transform transition-transform duration-300 ${
-                isAnimating ? "translate-x-0" : "translate-x-full"
-              }`}
+              className={`relative ml-auto w-4/5 max-w-xs h-full bg-white shadow-lg transform transition-transform duration-300 ${isAnimating ? "translate-x-0" : "translate-x-full"
+                }`}
             >
               {/* Close button */}
               <button
@@ -143,11 +127,10 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`block px-3 py-2 text-nowrap rounded-md text-base font-medium ${
-                      location.pathname === item.href
+                    className={`block px-3 py-2 text-nowrap rounded-md text-base font-medium ${location.pathname === item.href
                         ? "text-primary-600 bg-primary-50"
                         : "text-gray-700 hover:text-primary-600 hover:bg-gray-50"
-                    }`}
+                      }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}

@@ -1,45 +1,45 @@
-import React, { useState } from 'react';
-import { MessageCircle, X, Send } from 'lucide-react';
+import React, { useState } from "react";
+import { MessageCircle, X, Send } from "lucide-react";
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: 'Olá! Como posso ajudá-lo hoje?',
-      sender: 'bot',
+      text: "Olá! Como posso ajudá-lo hoje?",
+      sender: "bot",
       timestamp: new Date(),
     },
   ]);
-  const [inputMessage, setInputMessage] = useState('');
+  const [inputMessage, setInputMessage] = useState("");
 
   const handleSendMessage = () => {
     if (inputMessage.trim()) {
       const newMessage = {
         id: messages.length + 1,
         text: inputMessage,
-        sender: 'user',
+        sender: "user",
         timestamp: new Date(),
       };
 
       setMessages([...messages, newMessage]);
-      setInputMessage('');
+      setInputMessage("");
 
       // Simulate bot response
       setTimeout(() => {
         const botResponse = {
           id: messages.length + 2,
-          text: 'Obrigado pela sua mensagem! Nossa equipe entrará em contato em breve. Para um atendimento mais rápido, você pode nos ligar no (11) 9999-9999.',
-          sender: 'bot',
+          text: "Obrigado pela sua mensagem! Nossa equipe entrará em contato em breve. Para um atendimento mais rápido, você pode nos ligar no (+258) 87 533 3380.",
+          sender: "bot",
           timestamp: new Date(),
         };
-        setMessages(prev => [...prev, botResponse]);
+        setMessages((prev) => [...prev, botResponse]);
       }, 1000);
     }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSendMessage();
     }
   };
@@ -50,7 +50,7 @@ const ChatWidget = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="chat-bubble bg-primary-600 hover:bg-primary-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
+          className="chat-bubble bg-primary-600 hover:bg-[#00daff] text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
         >
           <MessageCircle className="h-6 w-6" />
         </button>
@@ -78,14 +78,14 @@ const ChatWidget = () => {
             {messages.map((message) => (
               <div
                 key={message.id}
-                className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"
+                  }`}
               >
                 <div
-                  className={`max-w-xs px-3 py-2 rounded-lg text-sm ${
-                    message.sender === 'user'
-                      ? 'bg-primary-600 text-white'
-                      : 'bg-gray-100 text-gray-800'
-                  }`}
+                  className={`max-w-xs px-3 py-2 rounded-lg text-sm ${message.sender === "user"
+                      ? "bg-primary-600 text-white"
+                      : "bg-gray-100 text-gray-800"
+                    }`}
                 >
                   {message.text}
                 </div>
@@ -106,7 +106,7 @@ const ChatWidget = () => {
               />
               <button
                 onClick={handleSendMessage}
-                className="bg-primary-600 hover:bg-primary-700 text-white p-2 rounded-lg transition-colors"
+                className="bg-primary-600 hover:bg-[#00daff] text-white p-2 rounded-lg transition-colors"
               >
                 <Send className="h-4 w-4" />
               </button>

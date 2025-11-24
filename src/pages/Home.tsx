@@ -10,30 +10,37 @@ import {
   Users,
   Award,
   CheckCircle,
+  Target,
+  Eye,
+  Heart,
 } from "lucide-react";
 
 const Home = () => {
   const services = [
     {
       icon: Globe,
+      img: "public/img/service/Responsiv.svg",
       title: "Sites Responsivos",
       description:
         "Desenvolvimento de sites modernos e responsivos que se adaptam a qualquer dispositivo.",
     },
     {
       icon: Smartphone,
+      img: "public/img/service/Mobil.svg",
       title: "Apps Mobile",
       description:
         "Aplicativos nativos para iOS e Android com performance excepcional.",
     },
     {
       icon: Settings,
+      img: "public/img/service/Busines.svg",
       title: "Sistemas Empresariais",
       description:
         "Soluções personalizadas para otimizar processos e aumentar produtividade.",
     },
     {
       icon: Code,
+      img: "public/img/service/Web.svg",
       title: "Plataformas Web",
       description:
         "Plataformas web robustas e escaláveis para seu negócio crescer.",
@@ -70,7 +77,7 @@ const Home = () => {
     {
       name: "Maria Silva",
       company: "CEO, TechStart",
-      text: "A DigitalCraft transformou nossa ideia em uma plataforma incrível. O resultado superou todas as expectativas!",
+      text: "A DevZone Systems transformou nossa ideia em uma plataforma incrível. O resultado superou todas as expectativas!",
       rating: 5,
     },
     {
@@ -130,43 +137,25 @@ const Home = () => {
               </div>
               <div className="flex items-center space-x-8 pt-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold">200+</div>
+                  <div className="text-3xl font-bold">20+</div>
                   <div className="text-gray-300">Projetos</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold">150+</div>
+                  <div className="text-3xl font-bold">20+</div>
                   <div className="text-gray-300">Clientes</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold">5+</div>
+                  <div className="text-3xl font-bold">2+</div>
                   <div className="text-gray-300">Anos</div>
                 </div>
               </div>
             </div>
             <div className="relative animate-slide-up px-8">
               <img
-                src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Desenvolvimento Digital"
-                className="rounded-lg shadow-2xl w-full   mx-auto"
+                src="public\img\setup-animate.svg"
+                alt="Desenvolvimento Digital"
+                className=""
               />
-              <div
-                className="absolute -left-2 -bottom-10 bg-white p-6 rounded-lg shadow-xl ml-4 mb-4 max-w-[90vw]"
-                style={{ maxWidth: "calc(100% - 2rem)" }}
-              >
-                <div className="flex items-center  space-x-3">
-                  <div className="bg-green-100 p-2 rounded-full">
-                    <CheckCircle className="h-6 w-6 text-green-600" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">
-                      Projeto Entregue
-                    </div>
-                    <div className="text-gray-600">
-                      No prazo e com qualidade
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -184,21 +173,26 @@ const Home = () => {
               empresas de todos os tamanhos
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8  ">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-lg card-hover"
+                className="bg-white rounded-xl shadow-lg card-hover overflow-hidden"
               >
-                <div className="bg-primary-100 p-3 rounded-lg w-fit mb-6">
-                  <service.icon className="h-8 w-8 text-primary-600" />
+                <div className="w-full bg-primary-200 -mb-4  ">
+                  <img src={service.img} alt={service.title} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
+                <div className="px-8 pb-4">
+                  <div className="bg-primary-600 p-3 rounded-lg w-fit mb-6">
+                    <service.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -247,13 +241,146 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Mission, Vision & Values Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-max">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Nossa Identidade
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Conheça os princípios que guiam nosso trabalho e definem quem
+              somos
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            {/* Missão */}
+            <div className="relative bg-white rounded-xl shadow-lg p-8 card-hover group overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary-100 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-75 transition-opacity"></div>
+              <div className="relative flex items-start space-x-4">
+                <div >
+                  <div className="bg-primary-600 w-16 mb-2 rounded-lg p-4 group-hover:bg-primary-700 transition-colors">
+                    <Target className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    Missão
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Fornecer soluções tecnológicas fiáveis, modernas e
+                    eficientes que ajudem empresas, escolas e instituições a
+                    automatizar processos e tomar decisões baseadas em dados.
+                  </p>
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary-100 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-75 transition-opacity"></div>
+              
+            </div>
+
+            {/* Valores */}
+            <div className="relative bg-white rounded-xl shadow-lg p-8 card-hover group overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-100 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-75 transition-opacity"></div>
+              <div className="relative">
+                <div className="flex items-start space-x-4 mb-6">
+                  <div>
+                    <div className="bg-purple-500 rounded-lg p-4 w-16 group-hover:bg-purple-600 transition-colors">
+                      <Heart className="h-8 w-8 text-white" />
+                    </div>
+                  
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                      Valores
+                    </h3>
+                  </div>
+                </div>
+                <ul className="space-y-3 z-10">
+                  <li className="flex items-start space-x-3 z-10">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-primary-600 rounded-full"></div>
+                    </div>
+                    <span className="text-gray-600 text-sm">
+                      <strong className="text-gray-900">Excelência:</strong>{" "}
+                      Programamos com precisão, testamos com rigor, entregamos
+                      com qualidade.
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-primary-600 rounded-full"></div>
+                    </div>
+                    <span className="text-gray-600 text-sm">
+                      <strong className="text-gray-900">
+                        Inovação Contínua:
+                      </strong>{" "}
+                      Aprendemos, evoluímos e incorporamos tecnologias modernas.
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-primary-600 rounded-full"></div>
+                    </div>
+                    <span className="text-gray-600 text-sm">
+                      <strong className="text-gray-900">Transparência:</strong>{" "}
+                      Mantemos comunicação aberta e clara com os nossos
+                      clientes.
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-primary-600 rounded-full"></div>
+                    </div>
+                    <span className="text-gray-600 text-sm">
+                      <strong className="text-gray-900">Compromisso:</strong>{" "}
+                      Entregamos dentro dos prazos, conforme o escopo e com
+                      suporte contínuo.
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-primary-600 rounded-full"></div>
+                    </div>
+                    <span className="text-gray-600 text-sm">
+                      <strong className="text-gray-900">Impacto Real:</strong>{" "}
+                      Criamos soluções que funcionam no dia a dia e geram
+                      resultados imediatos.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Visão */}
+            <div className="relative bg-white rounded-xl shadow-lg p-8 card-hover group overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-75 transition-opacity"></div>
+              <div className="relative flex items-start space-x-4">
+                <div>
+                  <div className="bg-blue-500 w-16 rounded-lg p-4 group-hover:bg-blue-600 transition-colors">
+                    <Eye className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    Visão
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Ser referência em Moçambique e na região como uma empresa
+                    líder em desenvolvimento de sistemas empresariais,
+                    reconhecida pela qualidade, inovação e impacto social.
+                  </p>
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-100 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-75 transition-opacity"></div>
+              
+            </div>
+
+            
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="section-padding bg-primary-600 text-white">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                Por que escolher a DigitalCraft?
+                Por que escolher a DevZone Systems?
               </h2>
               <p className="text-xl text-primary-100 mb-8">
                 Somos especialistas em transformar desafios complexos em
@@ -271,22 +398,22 @@ const Home = () => {
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-white/10 p-6 rounded-lg text-center">
                 <Users className="h-12 w-12 text-primary-300 mx-auto mb-4" />
-                <div className="text-2xl font-bold">150+</div>
+                <div className="text-2xl font-bold">20+</div>
                 <div className="text-primary-200">Clientes Satisfeitos</div>
               </div>
               <div className="bg-white/10 p-6 rounded-lg text-center">
                 <Award className="h-12 w-12 text-primary-300 mx-auto mb-4" />
-                <div className="text-2xl font-bold">98%</div>
+                <div className="text-2xl font-bold">94%</div>
                 <div className="text-primary-200">Taxa de Sucesso</div>
               </div>
               <div className="bg-white/10 p-6 rounded-lg text-center">
                 <Code className="h-12 w-12 text-primary-300 mx-auto mb-4" />
-                <div className="text-2xl font-bold">200+</div>
+                <div className="text-2xl font-bold">20+</div>
                 <div className="text-primary-200">Projetos Entregues</div>
               </div>
               <div className="bg-white/10 p-6 rounded-lg text-center">
                 <Star className="h-12 w-12 text-primary-300 mx-auto mb-4" />
-                <div className="text-2xl font-bold">4.9</div>
+                <div className="text-2xl font-bold">4.4</div>
                 <div className="text-primary-200">Avaliação Média</div>
               </div>
             </div>
@@ -346,11 +473,11 @@ const Home = () => {
               to="/contato"
               className="btn-primary inline-flex items-center"
             >
-              Solicitar Orçamento Gratuito
+              Solicitar Orçamento
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-            <a href="tel:+5511999999999" className="btn-secondary">
-              Ligar Agora: (11) 9999-9999
+            <a href="tel:+258875333380" className="btn-secondary">
+              Ligar Agora
             </a>
           </div>
         </div>

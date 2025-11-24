@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle,
+  ChevronDown,
+} from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +20,7 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(0);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -43,11 +52,11 @@ const Contact = () => {
   ];
 
   const budgetRanges = [
-    "Até R$ 5.000",
-    "R$ 5.000 - R$ 15.000",
-    "R$ 15.000 - R$ 30.000",
-    "R$ 30.000 - R$ 50.000",
-    "Acima de R$ 50.000",
+    "Até MZN 10.000",
+    "MZN 10.000 - MZN 25.000",
+    "MZN 25.000 - MZN 50.000",
+    "MZN 50.000 - MZN 100.000",
+    "Acima de MZN 100.000",
     "Prefiro não informar",
   ];
 
@@ -74,10 +83,13 @@ const Contact = () => {
   }
 
   return (
-    <div className="min-h-screen pt-18">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section id="hero" className="gradient-bg -mt-2 text-white section-padding">
-        <div className="container-max text-center">
+      <section
+        id="hero"
+        className="gradient-bg -mt-2 text-white section-padding"
+      >
+        <div className="container-max  text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">
             Entre em Contato
           </h1>
@@ -106,9 +118,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Telefone</h3>
-                      <p className="text-gray-600">(11) 9999-9999</p>
+                      <p className="text-gray-600">(+258) 87 533 3380</p>
                       <p className="text-sm text-gray-500">
-                        Segunda a Sexta, 9h às 18h
+                        Segunda a Sexta, 8h às 18h
                       </p>
                     </div>
                   </div>
@@ -119,9 +131,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">E-mail</h3>
-                      <p className="text-gray-600">
-                        contato@digitalcraft.com.br
-                      </p>
+                      <p className="text-gray-600">devzone.moz@gmail.com</p>
                       <p className="text-sm text-gray-500">
                         Resposta em até 24h
                       </p>
@@ -134,7 +144,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Endereço</h3>
-                      <p className="text-gray-600">São Paulo, SP</p>
+                      <p className="text-gray-600">Nampula, Mocambique</p>
                       <p className="text-sm text-gray-500">
                         Atendimento presencial com agendamento
                       </p>
@@ -232,7 +242,7 @@ const Contact = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                        placeholder="(11) 99999-9999"
+                        placeholder="84 *** ****"
                       />
                     </div>
 
@@ -334,14 +344,14 @@ const Contact = () => {
                       Concordo com os{" "}
                       <a
                         href="#"
-                        className="text-primary-600 hover:text-primary-700"
+                        className="text-primary-600 hover:text-[#00daff]"
                       >
                         termos de uso
                       </a>{" "}
                       e{" "}
                       <a
                         href="#"
-                        className="text-primary-600 hover:text-primary-700"
+                        className="text-primary-600 hover:text-[#00daff]"
                       >
                         política de privacidade
                       </a>
@@ -363,60 +373,76 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-white">
         <div className="container-max">
           <div className="text-center mb-12">
+            
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Perguntas Frequentes
             </h2>
-            <p className="text-xl text-gray-600">
-              Respostas para as dúvidas mais comuns
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-semibold text-gray-900 mb-3">
-                Qual é o prazo médio para desenvolvimento?
-              </h3>
-              <p className="text-gray-600">
-                O prazo varia conforme a complexidade do projeto. Sites simples:
-                2-4 semanas. Aplicativos: 2-4 meses. Sistemas complexos: 3-6
-                meses.
-              </p>
-            </div>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              {
+                question: "Qual é o prazo médio para desenvolvimento?",
+                answer:
+                  "O prazo varia conforme a complexidade do projeto. Sites simples: 2-4 semanas. Aplicativos: 2-4 meses. Sistemas complexos: 3-6 meses.",
+              },
+              {
+                question: "Vocês oferecem suporte pós-entrega?",
+                answer:
+                  "Sim! Oferecemos 3 meses de suporte gratuito e planos de manutenção contínua para garantir que seu projeto funcione perfeitamente.",
+              },
+              {
+                question: "Como funciona o processo de pagamento?",
+                answer:
+                  "Trabalhamos com parcelas: 50% no início, 30% na entrega do protótipo e 20% na finalização. Aceitamos Carteiras Moveis (M-pesa e E-Mola) e transferência bancarias.",
+              },
+              {
+                question: "Posso acompanhar o desenvolvimento?",
+                answer:
+                  "Claro! Você terá acesso à nossa área do cliente para acompanhar o progresso em tempo real e participar de reuniões semanais.",
+              },
+              {
+                question: "Quais tecnologias vocês utilizam?",
+                answer:
+                  "Utilizamos as tecnologias mais modernas do mercado, incluindo React, Node.js, Python, Flutter, e outras ferramentas de ponta, sempre escolhendo a melhor stack para cada projeto.",
+              },
+            ].map((faq, index) => (
+              <div
+                key={index}
+                className="relative bg-primary-50 rounded-lg shadow-sm overflow-hidden"
+              >
+                {/* Linha vertical roxa na esquerda */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary-600"></div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-semibold text-gray-900 mb-3">
-                Vocês oferecem suporte pós-entrega?
-              </h3>
-              <p className="text-gray-600">
-                Sim! Oferecemos 3 meses de suporte gratuito e planos de
-                manutenção contínua para garantir que seu projeto funcione
-                perfeitamente.
-              </p>
-            </div>
+                <div className="pl-6 pr-4 py-5 flex items-center justify-between">
+                  <h3 className="font-semibold text-gray-900 pr-4 flex-1">
+                    {faq.question}
+                  </h3>
+                  <button
+                    onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+                    className="flex-shrink-0 w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center text-white hover:bg-primary-700 transition-colors"
+                  >
+                    <ChevronDown
+                      className={`h-5 w-5 transition-transform duration-300 ${
+                        openFAQ === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-semibold text-gray-900 mb-3">
-                Como funciona o processo de pagamento?
-              </h3>
-              <p className="text-gray-600">
-                Trabalhamos com parcelas: 50% no início, 30% na entrega do
-                protótipo e 20% na finalização. Aceitamos PIX, transferência e
-                cartão.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-semibold text-gray-900 mb-3">
-                Posso acompanhar o desenvolvimento?
-              </h3>
-              <p className="text-gray-600">
-                Claro! Você terá acesso à nossa área do cliente para acompanhar
-                o progresso em tempo real e participar de reuniões semanais.
-              </p>
-            </div>
+                {/* Resposta expandida */}
+                {openFAQ === index && (
+                  <div className="px-6 pb-5 pt-0">
+                    <p className="text-gray-600 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>

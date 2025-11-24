@@ -100,7 +100,10 @@ const Blog = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section id="hero" className="gradient-bg -mt-2 text-white section-padding">
+      <section
+        id="hero"
+        className="gradient-bg -mt-2 text-white section-padding"
+      >
         <div className="container-max text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">Blog Técnico</h1>
           <p className="text-xl text-primary-100 max-w-3xl mx-auto">
@@ -225,7 +228,7 @@ const Blog = () => {
 
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500">{post.date}</span>
-                    <button className="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center">
+                    <button className="text-primary-600 hover:text-[#00daff] font-medium inline-flex items-center">
                       Ler mais
                       <ArrowRight className="ml-1 h-4 w-4" />
                     </button>

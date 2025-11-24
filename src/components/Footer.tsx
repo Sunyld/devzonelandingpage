@@ -19,10 +19,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4 text-center sm:text-left">
             <div className="flex items-center justify-center sm:justify-start space-x-2">
-              <div className="bg-primary-600 p-2 rounded-lg">
-                <Code className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-xl font-bold">DigitalCraft</span>
+              <img src="public\img\logoWhite.png" alt="DevZoneSystems" className="h-14" />
             </div>
             <p className="text-gray-300  ">
               Transformamos ideias em soluções digitais inovadoras.
@@ -142,16 +139,19 @@ const Footer = () => {
               <div className="flex items-center justify-center sm:justify-start space-x-3">
                 <Mail className="h-5 w-5 text-primary-400" />
                 <span className="text-gray-300">
-                  contato@digitalcraft.com.br
+                  <a href="#" className="hover:text-primary-400">
+                  devzone.moz@gmail.com
+
+                </a>
                 </span>
               </div>
               <div className="flex items-center justify-center sm:justify-start space-x-3">
                 <Phone className="h-5 w-5 text-primary-400" />
-                <span className="text-gray-300">(11) 9999-9999</span>
+                <span className="text-gray-300">(+258) 87 533 3380</span>
               </div>
               <div className="flex items-center justify-center sm:justify-start space-x-3">
                 <MapPin className="h-5 w-5 text-primary-400" />
-                <span className="text-gray-300">São Paulo, SP</span>
+                <span className="text-gray-300">Nampula, Mocambique</span>
               </div>
             </div>
           </div>
@@ -160,7 +160,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
             <p className="text-gray-400 text-sm w-full sm:w-auto">
-              © 2024 DigitalCraft. Todos os direitos reservados.
+              © 2025 <a href="#" className="hover:text-primary-400">DevZoneSystems</a>. Todos os direitos reservados.
             </p>
             <div className="flex justify-center sm:justify-end space-x-6 mt-4 sm:mt-0 w-full sm:w-auto">
               <a

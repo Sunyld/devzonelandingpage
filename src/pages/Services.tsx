@@ -24,7 +24,7 @@ const Services = () => {
         "Manutenção e suporte",
       ],
       technologies: ["React", "Next.js", "WordPress", "Tailwind CSS"],
-      price: "A partir de R$ 2.500",
+      price: "A partir de MZN 2.500",
     },
     {
       icon: Smartphone,
@@ -39,7 +39,7 @@ const Services = () => {
         "Publicação nas lojas",
       ],
       technologies: ["React Native", "Flutter", "Swift", "Kotlin"],
-      price: "A partir de R$ 8.000",
+      price: "A partir de MZN 8.000",
     },
     {
       icon: Settings,
@@ -54,7 +54,7 @@ const Services = () => {
         "Treinamento da equipe",
       ],
       technologies: ["Node.js", "Python", "PostgreSQL", "MongoDB"],
-      price: "A partir de R$ 15.000",
+      price: "A partir de MZN 15.000",
     },
     {
       icon: Code,
@@ -69,7 +69,7 @@ const Services = () => {
         "Analytics avançado",
       ],
       technologies: ["React", "Node.js", "AWS", "Docker"],
-      price: "A partir de R$ 12.000",
+      price: "A partir de MZN 12.000",
     },
   ];
 
@@ -109,7 +109,10 @@ const Services = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section id="hero" className="gradient-bg -mt-2 text-white section-padding">
+      <section
+        id="hero"
+        className="gradient-bg -mt-2 text-white section-padding"
+      >
         <div className="container-max text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">
             Nossos Serviços
@@ -161,7 +164,7 @@ const Services = () => {
                       {service.technologies.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-medium"
+                          className="bg-primary-100 text-[#00daff] px-3 py-1 rounded-full text-sm font-medium"
                         >
                           {tech}
                         </span>

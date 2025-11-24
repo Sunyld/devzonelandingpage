@@ -125,7 +125,10 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section id="hero" className="gradient-bg -mt-2 text-white section-padding">
+      <section
+        id="hero"
+        className="gradient-bg -mt-2 text-white section-padding"
+      >
         <div className="container-max text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">
             Nosso Portfólio
@@ -225,7 +228,7 @@ const Portfolio = () => {
                   </div>
 
                   <div className="flex space-x-4">
-                    <button className="flex items-center space-x-2 text-primary-600 hover:text-primary-700 font-medium">
+                    <button className="flex items-center space-x-2 text-primary-600 hover:text-[#00daff] font-medium">
                       <ExternalLink className="h-4 w-4" />
                       <span>Ver Projeto</span>
                     </button>
@@ -255,15 +258,15 @@ const Portfolio = () => {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold mb-2">200+</div>
+              <div className="text-4xl font-bold mb-2">20+</div>
               <div className="text-primary-200">Projetos Entregues</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold mb-2">150+</div>
+              <div className="text-4xl font-bold mb-2">20+</div>
               <div className="text-primary-200">Clientes Satisfeitos</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold mb-2">98%</div>
+              <div className="text-4xl font-bold mb-2">94%</div>
               <div className="text-primary-200">Taxa de Sucesso</div>
             </div>
             <div className="text-center">
@@ -288,7 +291,7 @@ const Portfolio = () => {
             <a href="/contato" className="btn-primary">
               Solicitar Orçamento
             </a>
-            <a href="tel:+5511999999999" className="btn-secondary">
+            <a href="tel:+258875333380" className="btn-secondary">
               Ligar Agora
             </a>
           </div>
