@@ -1,7 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
-  Code,
   Mail,
   Phone,
   MapPin,
@@ -19,7 +17,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4 text-center sm:text-left">
             <div className="flex items-center justify-center sm:justify-start space-x-2">
-              <img src="public\img\logoWhite.png" alt="DevZoneSystems" className="h-14" />
+              <img src="/img/logoWhite.png" alt="DevZoneSystems" className="h-14" />
             </div>
             <p className="text-gray-300  ">
               Transformamos ideias em soluções digitais inovadoras.

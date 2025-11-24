@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ExternalLink, Github, Filter } from "lucide-react";
 
 const Portfolio = () => {

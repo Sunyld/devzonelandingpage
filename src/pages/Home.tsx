@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -19,28 +18,28 @@ const Home = () => {
   const services = [
     {
       icon: Globe,
-      img: "public/img/service/Responsiv.svg",
+      img: "/img/service/Responsiv.svg",
       title: "Sites Responsivos",
       description:
         "Desenvolvimento de sites modernos e responsivos que se adaptam a qualquer dispositivo.",
     },
     {
       icon: Smartphone,
-      img: "public/img/service/Mobil.svg",
+      img: "/img/service/Mobil.svg",
       title: "Apps Mobile",
       description:
         "Aplicativos nativos para iOS e Android com performance excepcional.",
     },
     {
       icon: Settings,
-      img: "public/img/service/Busines.svg",
+      img: "/img/service/Busines.svg",
       title: "Sistemas Empresariais",
       description:
         "Soluções personalizadas para otimizar processos e aumentar produtividade.",
     },
     {
       icon: Code,
-      img: "public/img/service/Web.svg",
+      img: "/img/service/Web.svg",
       title: "Plataformas Web",
       description:
         "Plataformas web robustas e escaláveis para seu negócio crescer.",
@@ -152,7 +151,7 @@ const Home = () => {
             </div>
             <div className="relative animate-slide-up px-8">
               <img
-                src="public\img\setup-animate.svg"
+                src="/img/setup-animate.svg"
                 alt="Desenvolvimento Digital"
                 className=""
               />

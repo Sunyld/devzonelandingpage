@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Code, Smartphone, Globe, Settings } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false); // controla montagem
   const [isAnimating, setIsAnimating] = useState(false); // controla animação de saída
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [, setIsScrolled] = useState(false);
   const [isHero, setIsHero] = useState(true);
   const location = useLocation();
 
@@ -19,7 +19,7 @@ const Header = () => {
       const timeout = setTimeout(() => setIsMenuVisible(false), 300); // espera animação
       return () => clearTimeout(timeout);
     }
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isMenuVisible]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,7 +55,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-4 gap-6">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src={`${isHero ? "public/img/logoWhite.png" : "public/img/logo.png"}`} className="h-16" alt="DevZoneSystems" />
+            <img src={`${isHero ? "/img/logoWhite.png" : "/img/logo.png"}`} className="h-16" alt="DevZoneSystems" />
           </Link>
 
           {/* Desktop Navigation */}
